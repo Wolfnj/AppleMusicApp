@@ -13,6 +13,4 @@ data class AlbumItem(
         var artworkUrl100: String = "",
         var genres: List<Genre> = emptyList(),
         var url: String = "",
-
-
         )
