@@ -1,5 +1,7 @@
 package com.example.applemusicapp
 
+import java.io.Serializable
+
 data class AlbumItem(
         var artistName: String = "",
         var id: String = "",
@@ -13,4 +15,4 @@ data class AlbumItem(
         var artworkUrl100: String = "",
         var genres: List<Genre> = emptyList(),
         var url: String = "",
-        )
+        ) : Serializable

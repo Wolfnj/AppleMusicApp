@@ -10,11 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applemusicapp.databinding.ActivityMainBinding
+import java.io.Serializable
 
 class MainActivity : AppCompatActivity(), AlbumAdapter.OnAlbumClickListener {
 
     private val TAG = "MainActivity"
-
+    lateinit var albumItemsList: List<AlbumItem>
 
     //lateinit var albumAdapter: AlbumAdapter;
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity(), AlbumAdapter.OnAlbumClickListener {
         appleMusicLiveData.observe(
             this,
             Observer { albumItems ->
+                albumItemsList = albumItems
                 //Log.d(TAG,"Response received: $albumItems")
                 Log.d(TAG,"albumItems Type: ${albumItems.javaClass.name}")
                 val albumAdapter: AlbumAdapter = AlbumAdapter(albumItems,this)
@@ -62,6 +64,11 @@ class MainActivity : AppCompatActivity(), AlbumAdapter.OnAlbumClickListener {
 
 
     override fun onItemClick(position: Int) {
+        val intent = Intent(this, AlbumDetailsActivity::class.java).apply {
+            putExtra("albumItem", albumItemsList.get(position) as Serializable )
+        }
+
+        startActivityForResult(intent, REQUEST_ALBUM_CLICK)
 
     }
 

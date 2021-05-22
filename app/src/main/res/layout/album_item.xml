@@ -21,17 +21,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="25dp"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_toEndOf="@+id/album_image"
+            android:ellipsize="end"
+            android:inputType="none"
+            android:maxLines="2"
             android:paddingLeft="5dp"
             android:text="Album"
             android:textColor="@color/black"
             android:textSize="32dp"
-            android:textStyle="bold"
-            android:ellipsize="end"
-            android:inputType="none"
-            android:maxLines="2"/>
+            android:textStyle="bold" />
 
 
         <TextView
@@ -40,7 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/album_name_text_view"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
             android:layout_toEndOf="@+id/album_image"
             android:paddingLeft="5dp"
             android:text="Artist"
