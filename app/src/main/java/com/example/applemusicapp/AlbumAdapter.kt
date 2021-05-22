@@ -1,12 +1,12 @@
 package com.example.applemusicapp
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
+import com.squareup.picasso.Picasso
 
 
 class AlbumAdapter(private val albumItemsList: List<AlbumItem>,
@@ -23,8 +23,10 @@ class AlbumAdapter(private val albumItemsList: List<AlbumItem>,
     override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
         val currentAlbum =albumItemsList[position]
 
-        holder.titleTextView.text = currentAlbum.name
-        Log.d(TAG,"Album Name ${position}: ${currentAlbum.name}")
+        holder.albumNameTextView.text = currentAlbum.name
+        holder.artistNameTextView.text = currentAlbum.artistName
+        Picasso.get().load(currentAlbum.artworkUrl100).into(holder.albumImageView)
+
 
 
 
@@ -37,7 +39,9 @@ class AlbumAdapter(private val albumItemsList: List<AlbumItem>,
 
     inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener{
-        val titleTextView: TextView = itemView.findViewById(R.id.title_text_view)
+        val albumNameTextView: TextView = itemView.findViewById(R.id.album_name_text_view)
+        val albumImageView: ImageView = itemView.findViewById(R.id.album_image)
+        val artistNameTextView: TextView = itemView.findViewById(R.id.artist_name_text_view)
 
         init {
             itemView.setOnClickListener(this)
