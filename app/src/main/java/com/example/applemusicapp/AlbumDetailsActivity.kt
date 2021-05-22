@@ -2,6 +2,7 @@ package com.example.applemusicapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.example.applemusicapp.databinding.ActivityAlbumDetailsBinding
 import com.squareup.picasso.Picasso
 
@@ -49,4 +50,24 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
 
     }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home->{
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+    }
+
+
+
 }
