@@ -79,6 +79,29 @@ class MainActivity : AppCompatActivity(), AlbumAdapter.OnAlbumClickListener {
 
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+
+        if(requestCode == REQUEST_ALBUM_CLICK) {
+            if (resultCode == RESULT_OK) {
+
+
+            }
+
+        }
+
+//        else if(requestCode == REQUEST_SOMETHINGELSE) {
+//            if (resultCode == RESULT_OK) {
+//
+//
+//            }
+//        }
+    }
+
+
+
+
 
 
 

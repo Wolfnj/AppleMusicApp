@@ -1,8 +1,10 @@
 package com.example.applemusicapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import com.example.applemusicapp.databinding.ActivityAlbumDetailsBinding
 import com.squareup.picasso.Picasso
 
@@ -52,6 +54,18 @@ class AlbumDetailsActivity : AppCompatActivity() {
     }
 
 
+//    fun returnAlbum(view: View) {
+//        val addIntent = Intent().apply {
+//            //putExtra("title", something)
+//            //("description", something)
+//        }
+//        setResult(RESULT_OK, addIntent)
+//        finish()
+//    }
+
+
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             android.R.id.home->{
@@ -65,7 +79,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
     override fun finish() {
         super.finish()
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        //overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 
 
